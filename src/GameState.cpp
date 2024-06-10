@@ -16,7 +16,7 @@ void GameState::initKeybinds() {
 }
 
 void GameState::initTextures(){
-	if (!this->textures["PLAYER_IDLE"].loadFromFile("Resources\\Images\\Sprites\\Player\\cow_stand.png")) {
+	if (!this->textures["PLAYER_IDLE"].loadFromFile("Resources/Images/Sprites/Player/cow_stand.png")) {
 		throw ("ERROR::GAME_STATE::NOT_LOADED_TEXTURE");
 	}
 }
