@@ -110,7 +110,6 @@ void Game::update() {
     }
 }
 
-
 void Game::render() {
 
     this->window->clear();

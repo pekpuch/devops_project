@@ -8,11 +8,21 @@ class GameState :
 {
 private:
     Player* player;
+    sf::Text hpText;
+    sf::Font font;
+    sf::Clock damageTimer;
+    double energy = 100;
+    bool block = false;
+    sf::RectangleShape hpBar;
+    sf::RectangleShape hpBarBack;
 
     //Функции
     void initKeybinds();
     void initTextures();
     void initPlayers();
+    //void initColliders();
+    void hp_upd();
+
 
 public:
     GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states);

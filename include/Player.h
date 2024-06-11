@@ -2,22 +2,21 @@
 #define PLAYER_H
 
 #include "Entity.h"
+#include "HeatBox.h"
 class Player :
     public Entity
 {
 private:
-    //var
-
 
     //init func
     void initVariables();
     void initComponents();
 
 public:
-    Player(float x, float y, sf::Texture* texture);
+    Player(float x, float y, sf::Texture& texture);
     virtual ~Player();
-
-    //Функции
+    virtual void update(const float& dt); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!!!!!!!!!!!!
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 };
 
 #endif

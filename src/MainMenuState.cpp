@@ -1,6 +1,6 @@
 #include "MainMenuState.h"
 
-//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+//инициализация функций
 void MainMenuState::initVariables(){
 
 }
@@ -79,7 +79,7 @@ void MainMenuState::updateInput(const float& dt) {
 
 void MainMenuState::updateButtons() {
 
-	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	//обновляет все кнопки в этом состоянии и мутит их функциональность
 	for (auto& it : this->buttons) {
 		it.second->update(this->mousePosView);
 	}
@@ -117,7 +117,7 @@ void MainMenuState::render(sf::RenderTarget* target) {
 	this->renderButtons(target);
 
 
-	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	//ОТЛАДКА
 	sf::Text mouseText;
 	mouseText.setPosition(this->mousePosView.x, this->mousePosView.y - 30);
 	mouseText.setFont(this->font);
