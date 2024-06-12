@@ -16,22 +16,6 @@ void GameState::initKeybinds() {
 
 	//�������� � � ������� ��������!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
-//
-//void GameState::initColliders() {
-//	// ������ ���������� �����������
-//	sf::RectangleShape collider1;
-//	collider1.setSize(sf::Vector2f(200.f, 50.f));
-//	collider1.setFillColor(sf::Color::Cyan);
-//	collider1.setPosition(300.f, 400.f);
-//
-//	sf::RectangleShape collider2;
-//	collider2.setSize(sf::Vector2f(200.f, 50.f));
-//	collider2.setFillColor(sf::Color::Blue);
-//	collider2.setPosition(600.f, 500.f);
-//
-//	this->colliders.push_back(collider1);
-//	this->colliders.push_back(collider2);
-//}
 
 
 void GameState::initTextures(){
@@ -46,6 +30,34 @@ void GameState::initPlayers(){
 	this->player = new Player(600, 300, this->textures["PLAYER"]);//��������!!!!!!!!!
 }
 
+void GameState::initMusic() {
+	/*if (!this->soundBuffer.loadFromFile("Resources/Sounds/game3.ogg"))
+		throw ("ERROR::GAME_STATE::NOT_LOADED_MUSIC");
+	this->mainMusic.setBuffer(soundBuffer);*/
+	if (!this->mainMusic.openFromFile("Resources/Sounds/game3.ogg"))
+		throw ("ERROR::GAME_STATE::NOT_LOADED_MUSIC");
+	this->mainMusic.setLoop(true);
+	this->mainMusic.play();
+}
+
+void GameState::initPlatforms() {
+	std::fstream ifs("Resources/Levels/level1.level");
+
+	if (ifs.is_open()) {
+		float x = 0;
+		float y = 0;
+		float weight = 0;
+		float height = 0;
+		std::string colour = "";
+
+		int curr = 0;
+		while (ifs >> x >> y >> weight >> height >> colour) {
+			this->platforms.push_back(new Platform(x, y, weight, height, sf::Color::Blue));
+		}
+	}
+
+	ifs.close();
+}
 
 
 GameState::GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
@@ -53,13 +65,32 @@ GameState::GameState(sf::RenderWindow* window, std::map<std::string, int>* suppo
 	this->initKeybinds();
 	this->initTextures();
 	this->initPlayers();
-	//this->initColliders();
+	this->initMusic();
+	this->initPlatforms();
 }
 
 GameState::~GameState() {
 	delete this->player;
 
 }
+
+//void GameState::updateCollision(){
+//	for (auto& it : this->platforms) {
+//		it->checkCollision(this->queueCollision, this->player->heatbox);
+//		std::ofstream out;          // ����� ��� ������
+//		out.open("de_bug/test.txt");      // ��������� ���� ��� ������
+//		if (!this->queueCollision.empty()) {
+//			if (out.is_open())
+//			{
+//				sf::FloatRect coord = this->queueCollision.back();
+//				out << coord.getPosition().x << " " << coord.getPosition().y << " " << coord.height << std::endl;
+//			}
+//			out.close();
+//		}
+//	}
+//	if (!this->queueCollision.empty())
+//		this->queueCollision.pop();
+//}
 
 void GameState::hp_upd() {
 	font.loadFromFile("Fonts/ComicoroRu_0.ttf");
@@ -114,7 +145,7 @@ void GameState::updateInput(const float& dt) {
 		this->endState();
 
 	hp_upd();
-	energy = energy +0.2;
+	energy = energy + 0.4;
 	if (energy >= 50) {
 		block = false;
 	}
@@ -123,15 +154,22 @@ void GameState::updateInput(const float& dt) {
 	}
 }
 
-
 void GameState::update(const float& dt) {
 	this->updateMousePosition();
 	this->updateInput(dt);
+
+	//this->updateCollision();
 
 	// ��������� �������� ������ this->player->heatbox->setVelocityy(0.f);
 	this->player->update(dt);
 
 	// ��������� � ������������ ��������
+}
+
+void GameState::renderPlatforms(sf::RenderTarget* target) {
+	for (auto& it : this->platforms) {
+		it->render(target);
+	}
 }
 
 void GameState::render(sf::RenderTarget* target) {
@@ -150,9 +188,11 @@ void GameState::render(sf::RenderTarget* target) {
 	target->draw(energyBar);
 
 	// ��������� �����������
-	/*for (auto& collider : this->colliders) {
-		target->draw(collider);
-	}*/
+	//for (auto& collider : this->colliders) {
+	//	target->draw(collider);
+	//}
+
+	this->renderPlatforms(target);
 
 	this->player->render(target);
 }

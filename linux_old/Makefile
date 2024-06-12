@@ -4,13 +4,16 @@ LDLIBS = -Llibraries/SFML-2.6.1/lib -lsfml-graphics -lsfml-window -lsfml-system 
 SRCS = $(wildcard src/*.cpp)
 OBJS = $(patsubst src/%.cpp,src/%.o,$(SRCS))
 
-all: main
+all: main run_script
 
 main: $(OBJS)
 	g++ $^ -o $@ $(LDLIBS)
 
 src/%.o: src/%.cpp include/%.h
 	g++ $(CXXFLAGS) -c $< -o $@
+
+run_script:
+	sh script.sh
 
 clean:
 	rm -f *.o *.out main main

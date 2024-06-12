@@ -22,10 +22,8 @@ private:
     int max_hp;
     int current_hp; // Поле для хранения текущего количества очков здоровья
     sf::Vector2f velocity;
-
 public:
-    sf::RectangleShape hitbox; 
-
+    sf::RectangleShape hitbox;
     HeatBox();
     virtual ~HeatBox();
 

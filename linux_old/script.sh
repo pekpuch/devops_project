@@ -1,0 +1,1 @@
+LD_LIBRARY_PATH=$PWD/libraries/SFML-2.6.1/lib:$LD_LIBRARY_PATH

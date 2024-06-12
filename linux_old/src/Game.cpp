@@ -72,6 +72,9 @@ Game::~Game() {
 }
 
 
+void getWindowSize() {
+}
+
 //Functions
 
 void Game::endApplication() {

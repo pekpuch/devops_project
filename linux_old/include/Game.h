@@ -32,6 +32,8 @@ public:
 
 	//Functions
 
+	void getWindowSize();
+
 	void endApplication();
 
 	//обновляет dt со временем, необходимым на обновление и рендеринг одного кадра
