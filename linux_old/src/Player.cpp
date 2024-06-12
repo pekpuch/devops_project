@@ -22,7 +22,7 @@ Player::~Player() {
 }
 
 
-void Player::update(const float& dt) { //ÄÎÁÀÂÈËÀ!!!!!!!!!!!!!!!!!
+void Player::update(const float& dt) { //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!!!!!!!!!!!!!!!!!
     this->movementComponent->update(dt);
 
     if (this->movementComponent->idle()) {

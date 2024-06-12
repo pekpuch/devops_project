@@ -4,7 +4,7 @@
 #include "HeatBox.h"
 #include "AnimationComponent.h"
 
-//База для каждого персонажа который создается
+
 class Entity
 {
 private:
@@ -12,7 +12,7 @@ private:
 protected:
 	sf::Sprite sprite;
 	MovementComponent* movementComponent;
-	AnimationComponent* animationComponent; //ДОБАВИЛА!!!!!!!!!!!
+	AnimationComponent* animationComponent; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!!!!!!!!!!!
 
 	sf::Vector2f previousPosition;
 
@@ -25,7 +25,7 @@ public:
 	sf::FloatRect getGlobalBounds();
 	sf::Vector2f getPrevoius();
 	void createMovementComponent(const float maxVelocity, const float acceleration, const float deceleration, HeatBox* heatbox);
-	void createAnimationComponent(sf::Texture& texture); //ДОБАВИЛА!!!!!!!!!!!!!!!!
+	void createAnimationComponent(sf::Texture& texture); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!!!!!!!!!!!!!!!!
 
 
 	virtual void setPosition(const float x, const float y);
