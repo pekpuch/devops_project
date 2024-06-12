@@ -20,7 +20,7 @@ class HeatBox
 {
 private:
     int max_hp;
-    int current_hp; // Поле для хранения текущего количества очков здоровья
+    int current_hp; 
     sf::Vector2f velocity;
 public:
     sf::RectangleShape hitbox;
@@ -31,14 +31,14 @@ public:
     void getDamage(int damage);
 
     int getMaxHP() const;
-    int getCurrentHP() const; // Метод для получения текущих очков здоровья
+    int getCurrentHP() const; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-    void setHitboxSize(const sf::Vector2f& size); // Устанавливаем размер хитбокса
-    void setHitboxPosition(const sf::Vector2f& position); // Устанавливаем позицию хитбокса
-    sf::FloatRect getGlobalBounds() const; // Получаем глобальные границы хитбокса
+    void setHitboxSize(const sf::Vector2f& size); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    void setHitboxPosition(const sf::Vector2f& position); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    sf::FloatRect getGlobalBounds() const; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     void move(const float dir_x, const float dir_y, const float& dt);
     void setVelocity(float newvelocity);
     void setVelocityy(float newvelocity);
 
-    void render(sf::RenderTarget& target); // Рендерим хитбокс
+    void render(sf::RenderTarget& target); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 };

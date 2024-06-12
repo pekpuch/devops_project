@@ -10,7 +10,7 @@ Entity::Entity() {
 	this->initVariables();
 	this->heatbox = new HeatBox();
 	this->heatbox->setMaxHP(100);
-	this->heatbox->setHitboxSize(sf::Vector2f(150.f, 70.f)); // Примерный размер хитбокса
+	this->heatbox->setHitboxSize(sf::Vector2f(150.f, 70.f)); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 }
 
 Entity::~Entity() {
@@ -28,7 +28,7 @@ void Entity::createMovementComponent(const float maxVelocity, const float accele
 	this->heatbox->setVelocityy(maxVelocity);
 }
 
-void Entity::createAnimationComponent(sf::Texture& texture) { //ДОБАВИЛА!!!!!!!!!!!!!
+void Entity::createAnimationComponent(sf::Texture& texture) { //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!!!!!!!!!!!!!
 	this->animationComponent = new AnimationComponent(this->sprite, texture);
 }
 
@@ -47,7 +47,7 @@ void Entity::setPosition(const float x, const float y){
 void Entity::move(const float dir_x, const float dir_y, const float& dt) {
 	if (this->movementComponent) {
 		this->previousPosition = this->heatbox->hitbox.getPosition();
-		this->movementComponent->move(dir_x, dir_y, dt); // двигаем спрайт
+		this->movementComponent->move(dir_x, dir_y, dt); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	}
 }
 

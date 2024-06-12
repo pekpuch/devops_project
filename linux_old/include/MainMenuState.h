@@ -13,7 +13,7 @@ private:
 
     std::map<std::string, Button*> buttons;
 
-    //�������
+    //�������
     void initVariables();
     void initBackground();
     void initFonts();
@@ -31,4 +31,6 @@ public:
     void renderButtons(sf::RenderTarget* target = NULL);
     void render(sf::RenderTarget* target = NULL);
 };
+
+// тесты состояния главного меню
 

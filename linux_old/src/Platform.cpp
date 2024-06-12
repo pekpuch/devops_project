@@ -2,7 +2,7 @@
 
 //void Platforms::initCollider(float x, float y, float width,
 //	float height) {
-//	// Пример добавления коллайдеров
+//	// ГЏГ°ГЁГ¬ГҐГ° Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГї ГЄГ®Г«Г«Г Г©Г¤ГҐГ°Г®Гў
 //	sf::RectangleShape collider1;
 //	collider1.setSize(sf::Vector2f(200.f, 50.f));
 //	collider1.setFillColor(sf::Color::Cyan);
@@ -28,8 +28,8 @@ Platform::Platform(float x, float y, float width,
 
 void Platform::checkCollision(std::queue<sf::FloatRect>& queue, HeatBox* hitbox) {
 	sf::FloatRect hitboxBounds = hitbox->getGlobalBounds();
-	//std::ofstream out;          // поток для записи
-	//out.open("de_bug/test.txt");      // открываем файл для записи
+	//std::ofstream out;          // ГЇГ®ГІГ®ГЄ Г¤Г«Гї Г§Г ГЇГЁГ±ГЁ
+	//out.open("de_bug/test.txt");      // Г®ГІГЄГ°Г»ГўГ ГҐГ¬ ГґГ Г©Г« Г¤Г«Гї Г§Г ГЇГЁГ±ГЁ
 	//if (out.is_open())
 	//{
 	//	out << hitboxBounds.getPosition().x << " " << hitboxBounds.getPosition().y << " " << hitboxBounds.height << std::endl;

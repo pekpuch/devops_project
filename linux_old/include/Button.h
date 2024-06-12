@@ -22,7 +22,7 @@ private:
 	sf::Text text;
 
 
-	//цвета для режимов кнопки
+	//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	sf::Color idleColor;
 	sf::Color hoverColor;
 	sf::Color activeColor;

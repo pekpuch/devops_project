@@ -23,7 +23,7 @@ private:
     std::vector<Platform*> platforms;
     std::queue<sf::FloatRect> queueCollision;
 
-    //Функции
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     void initKeybinds();
     void initTextures();
     void initPlayers();

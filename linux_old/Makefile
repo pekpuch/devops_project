@@ -1,5 +1,6 @@
-CXXFLAGS = -std=c++11 -Iinclude -Ilibraries/SFML-2.6.1/include -fPIE -Wl,-rpath,libraries/SFML-2.6.1/lib
-LDLIBS = -Llibraries/SFML-2.6.1/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network
+CXX = g++
+CXXFLAGS = -std=c++17 -Iinclude -Itest -Ilibraries/SFML-2.6.1/include -fPIE -Wl,-rpath,libraries/SFML-2.6.1/lib
+LDLIBS = -Llibraries/SFML-2.6.1/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network -lgtest -lgtest_main
 
 SRCS = $(wildcard src/*.cpp)
 OBJS = $(patsubst src/%.cpp,src/%.o,$(SRCS))
